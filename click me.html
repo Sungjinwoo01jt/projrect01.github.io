@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Cherry Joy</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #ffafbd, #ffc3a0);
+            color: #4a4a4a;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ff6f61;
+            margin-top: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            font-size: 1.5em;
+            margin-top: 10px;
+            color: #6a6a6a;
+            line-height: 1.5;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: white;
+            background-color: #ff6f61;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        button:hover {
+            background-color: #e0554d;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 1em;
+            color: #4a4a4a;
+        }
+
+        /* Floating Emojis */
+        .emoji {
+            font-size: 2.5em;
+            position: absolute;
+            animation: float 4s infinite ease-in-out;
+        }
+
+        .emoji:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+        .emoji:nth-child(2) { left: 70%; top: 40%; animation-delay: 1s; }
+        .emoji:nth-child(3) { left: 30%; top: 60%; animation-delay: 2s; }
+        .emoji:nth-child(4) { left: 90%; top: 10%; animation-delay: 3s; }
+        .emoji:nth-child(5) { left: 50%; top: 80%; animation-delay: 4s; }
+
+        @keyframes float {
+            0% { transform: translateY(0); opacity: 1; }
+            50% { transform: translateY(-30px); opacity: 0.8; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        /* Fireworks Animation */
+        .fireworks {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: explode 2s infinite ease-out;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(50);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Hi, Cherry Joy! 🌸</h1>
+    <p>
+        It’s been 2 days without messaging you, and honestly, it felt like 2 months.  
+        I hope you didn’t miss me too much HAHAHAHA…    
+        But don’t worry, I’m here now, making up for u.  
+        Did you miss me? Or should I wait another two days to become unforgettable? WHAHAHAH.. 
+    </p>
+    <button onclick="displayMessage()">Click Me</button>
+    
+    <!-- Floating Emojis -->
+    <div class="emoji">💖</div>
+    <div class="emoji">✨</div>
+    <div class="emoji">🌸</div>
+    <div class="emoji">😊</div>
+    <div class="emoji">🌟</div>
+
+    <!-- Fireworks Animation -->
+    <div class="fireworks" id="fireworks"></div>
+
+    <footer>
+        <p>
+            PS: From Jeff btw please don’ttake it seriously... It’s just a joke. I hope it didn’t offend u, but if it did let me know so i can send u a heartfelt apology... or at least at a corny memes as peace offering 😅   
+            Btw just you know you’re awesome, sublime and I hope this made your day better!😊💕
+        </p>
+    </footer>
+
+    <script>
+        function displayMessage() {
+            alert("Jeff says: Cherry Joy, I missed chatting with you! Hope this brought a smile to your face. 😊 Let me know if you missed me too (and be honest)! 😜");
+        }
+
+        // Fireworks Generator
+        function createFirework() {
+            const firework = document.createElement("div");
+            firework.classList.add("firework");
+            firework.style.left = Math.random() * 100 + "vw";
+            firework.style.top = Math.random() * 100 + "vh";
+            firework.style.animationDuration = Math.random() * 2 + 1 + "s";
+            document.getElementById("fireworks").appendChild(firework);
+
+            setTimeout(() => {
+                firework.remove();
+            }, 2000);
+        }
+
+        // Generate fireworks every 500ms
+        setInterval(createFirework, 500);
+    </script>
+</body>
+</html>
